@@ -1,19 +1,7 @@
 # Sentient
 
-**TODO: Add description**
+Simple sentiment analysis using the [AFINN-111](http://www2.imm.dtu.dk/pubdb/views/publication_details.php?id=6010) wordlist
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
-
-  1. Add sentient to your list of dependencies in `mix.exs`:
-
-        def deps do
-          [{:sentient, "~> 0.0.1"}]
-        end
-
-  2. Ensure sentient is started before your application:
-
-        def application do
-          [applications: [:sentient]]
-        end
+Coming soon
