@@ -1,13 +1,15 @@
 defmodule Sentient do
+  @afinn_source File.read!(__DIR__ <> "/../config/AFINN-111.json")
+                |> Poison.Parser.parse!
+
   def analyze(phrase, override_words \\ %{}) do
-    tokenized_phrase = Tokenizer.tokenize(phrase)
-    afinn = File.read!(__DIR__ <> "/../config/AFINN-111.json")
-            |> Poison.Parser.parse!
+    afinn = @afinn_source
             |> Map.merge(override_words)
 
-    tokenized_phrase
-    |> Enum.filter(fn(word) -> afinn[word] end)
-    |> Enum.map(fn(word) -> afinn[word] end)
-    |> Enum.reduce(fn(score, total) -> total + score end)
+    phrase
+    |> Tokenizer.tokenize
+    |> Enum.filter(&(afinn[&1]))
+    |> Enum.map(&(afinn[&1]))
+    |> Enum.reduce(&(&1 + &2))
   end
 end
