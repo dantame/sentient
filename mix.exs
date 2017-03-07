@@ -3,7 +3,7 @@ defmodule Sentient.Mixfile do
 
   def project do
     [app: :sentient,
-     version: "0.0.3",
+     version: "0.0.4",
      elixir: "~> 1.4",
      description: "Simple sentiment analysis based on the AFINN-111 wordlist",
      package: package(),
