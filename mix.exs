@@ -6,10 +6,10 @@ defmodule Sentient.Mixfile do
      version: "0.0.3",
      elixir: "~> 1.4",
      description: "Simple sentiment analysis based on the AFINN-111 wordlist",
-     package: package,
+     package: package(),
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     deps: deps]
+     deps: deps()]
   end
 
   def application do
