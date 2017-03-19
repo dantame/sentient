@@ -3,13 +3,13 @@ defmodule Sentient.Mixfile do
 
   def project do
     [app: :sentient,
-     version: "0.0.2",
-     elixir: "~> 1.1",
+     version: "0.0.4",
+     elixir: "~> 1.4",
      description: "Simple sentiment analysis based on the AFINN-111 wordlist",
-     package: package,
+     package: package(),
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     deps: deps]
+     deps: deps()]
   end
 
   def application do
@@ -17,7 +17,7 @@ defmodule Sentient.Mixfile do
   end
 
   defp deps do
-    [{:poison, "~> 1.5"}]
+    [{:poison, ">= 2.2.0"}]
   end
 
   defp package do
