@@ -17,7 +17,7 @@ defmodule Sentient.Mixfile do
   end
 
   defp deps do
-    [{:poison, "~> 2.0"}]
+    [{:poison, "~> 2.2"}]
   end
 
   defp package do
